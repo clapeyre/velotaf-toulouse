@@ -1,0 +1,15 @@
+enable : true
+heading : News 
+headingSpan : Letter
+title : Contact Details
+content : Ce service vous plaît? Il serait plus pratique sur smartphone? Inscrivez-vous pour savoir quand l'appli sera prête!
+#enable_maps : true
+#mapLatitude : 51.5223477
+#mapLongitude: -0.1622023
+contactDetails :
+  - icon : tf-map-pin
+    info : "Toulouse, France "
+    
+  - icon : tf-ion-ios-email-outline
+    info : "Email: hello@rouelibre.com"
+    
