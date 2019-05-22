@@ -1,0 +1,38 @@
+{{ if .Site.Data.forecast.enable}}
+{{"<!-- Start About Section -->" | safeHTML}}
+<section class="bg-one about section" id="forecast">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                {{"<!-- section title -->" | safeHTML}}
+                <div class="title text-center wow fadeIn" data-wow-duration="1500ms">
+                    <h2>{{ .Site.Data.forecast.heading}} <span class="color">{{ .Site.Data.forecast.headingSpan}}</span> </h2>
+                    <div class="border-meghna"></div>
+                    <br>
+                    <h3> {{ .Site.Data.forecast.resume}} </h3>
+                </div>
+            </div>
+            {{"<!-- /section title -->" | safeHTML}}
+
+            {{ range .Site.Data.forecast.forecastItem }}
+            {{"<!-- meteo locale item -->" | safeHTML}}
+            <div class="bigblock center wow fadeInUp" data-wow-duration="500ms">
+                <div class="block">
+                    <div class="content text-center">
+                        {{ with .title }}<h3 class="ddd">{{ . }}</h3>{{ end }}
+                    </div>
+                    <div class="icon-box">
+                        <img class="img-fluid" src="{{ .icon | absURL }}" alt="weather">
+                    </div>
+                    {{"<!-- Express About Yourself -->" | safeHTML}}
+                    <div class="content text-center">
+                        {{ with .content}}  <p>{{ . }}</p>{{ end }}
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{"<!-- /meteo locale -->" | safeHTML}}
+{{ end }}

@@ -1137,8 +1137,9 @@ a:hover {
   Our skills
 ==================================================================*/
 .skill-bar p {
-  font-size: 18px;
+  font-size: 25px;
   margin-bottom: 0;
+  margin-left: 100px;
 }
 
 .skill-bar p span {
@@ -1147,6 +1148,7 @@ a:hover {
   color: rgba(187, 187, 187, 0.34);
   display: inline-block;
   vertical-align: middle;
+  margin-right: 10000px;
 }
 
 .skill-bar .progress {

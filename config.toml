@@ -1,7 +1,7 @@
 #baseURL = "file:///Users/misdariis/Documents/Perso/Projects/rouelibre/velotaf-toulouse/public/"
 baseURL = "" #www.exemple.org"
 languageCode = "en-us"
-title = "Roue libre"
+title = "Roulibre"
 theme = "meghna-hugo"
 summaryLength = 4
 
@@ -16,9 +16,14 @@ summaryLength = 4
 # Menu
 [menu]
     [[menu.nav]]
-    name = "Meteo locale"
-    URL = "meteo_locale"
+    name = "Aujourd'hui"
+    URL = "today"
     weight = 2
+
+    [[menu.nav]]
+    name = "Les prochains jours"
+    URL = "forecast"
+    weight = 3
 
     [[menu.nav]]
     name = "Contact"
@@ -31,7 +36,7 @@ home= "Home"
 logo = "images/logo.png"
 #gmapAPI = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"
 # Meta data
-description = "A dugong service"
+description = "Services pour le velotaf"
 author = "The Dugong team"
 # Google Analitycs
 googleAnalitycsID = "Your ID"

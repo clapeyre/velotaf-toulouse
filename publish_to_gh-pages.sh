@@ -19,6 +19,11 @@ git worktree add -B gh-pages public origin/gh-pages
 echo "Removing existing files"
 rm -rf public/*
 
+echo "Updating weather conditions" 
+cd update_weather_conditions
+python update
+cd ..
+
 echo "Generating site"
 hugo
 

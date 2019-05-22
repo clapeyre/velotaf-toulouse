@@ -683,12 +683,20 @@ a:hover {
 /*=================================================================
   About us section
 ==================================================================*/
+.about .bigblock {
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid transparent;
+}
+
 .about .block {
   background: #242930;
-  padding: 30px;
+  padding: 1em;
   border-bottom: 2px solid transparent;
   transition: .5s all;
   margin-bottom: 20px;
+  width: 200px;
+  height: 350px;
 }
 
 .about .block:hover {
@@ -702,13 +710,12 @@ a:hover {
 
 .about .block .icon-box {
   position: relative;
-  width: 160px;
-  height: 92.38px;
+  width: 50%;
+  height: auto;
   background-color: transparent;
   margin: 46.19px auto 60px;
-  padding: 20px 0;
-  border-left: 2px 
-  border-right: 2px 
+  border-left: auto;
+  border-right: auto; 
   font-size: 50px;
   -webkit-transform: translateZ(0px);
   transform: translateZ(0px);
@@ -1137,13 +1144,14 @@ a:hover {
   Our skills
 ==================================================================*/
 .skill-bar p {
-  font-size: 18px;
+  font-size: 24px;
   margin-bottom: 0;
 }
 
 .skill-bar p span {
   font-style: italic;
   font-size: 30px;
+  margin-right: 10px;
   color: rgba(187, 187, 187, 0.34);
   display: inline-block;
   vertical-align: middle;

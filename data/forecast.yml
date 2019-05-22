@@ -1,0 +1,24 @@
+enable : true
+heading : About
+headingSpan : Us
+forecastItem :
+
+  - icon : images/green_bike.png
+    title : Jeudi
+    content : 
+
+  - icon : images/red_bike.png
+    title : Vendredy
+    content : Pluie prévue
+
+  - icon : images/red_bike.png
+    title : Samedi
+    content : Pluie prévue
+
+  - icon : images/green_bike.png
+    title : Dimanche
+    content : 
+
+  - icon : images/red_bike.png
+    title : Lundi
+    content : Pluie prévue
