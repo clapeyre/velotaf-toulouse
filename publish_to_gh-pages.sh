@@ -21,7 +21,7 @@ rm -rf public/*
 
 echo "Updating weather conditions" 
 cd update_weather_conditions
-python update
+python update.py
 cd ..
 
 echo "Generating site"
