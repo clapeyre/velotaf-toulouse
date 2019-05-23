@@ -55,6 +55,8 @@ def update_forecast(forecast):
             if 'rain' in forecast[day]['description']:
                 text = ['Pluie prévue']
                 index += 3
+            if len(text) == 0:
+                text = ['Belle journée, prend ton vélo']
             lines.append(rou.forecast_item.format(rou.forecast_img[index],jour,'. '.join(text)))
 
     with open("../data/forecast.yml","w") as fid:
