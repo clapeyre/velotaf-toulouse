@@ -36,30 +36,64 @@ def update_today(weather):
         fid.writelines(lines)
 
 def update_forecast(forecast):
-    """ Update forecast page with weather forecast """
+    """ Update forecast page with weather forecast, A REVOIR !!  """
     import time
     today = time.strftime('%A')
-    print(today)
-
-    week_summary = "Bonne semaine pour le vélo"
-    lines = [ rou.forecast_header.format(week_summary)]
+    day_index = []
+    lines = []
 
     for day in forecast:
         text = []
+        index = 0
         if not day == today:
             jour = rou.jour[day]
-            index = 0
-            if forecast[day]['temp'] < 10 :
-                text.append('Temperature faible, couvrez vous.')
-                index += 1
-            if 'rain' in forecast[day]['description']:
-                text = ['Pluie prévue']
-                index += 3
-            if len(text) == 0:
-                text = ['Belle journée, prend ton vélo']
+            for hour in range(21,-1,-3):
+                if hour < 12: rain_daytime = rou.morning
+                else : rain_daytime = rou.day
+                if forecast[day][hour]['temp'] < 10 :
+                    if not rou.cold in text:
+                        text.append(rain_daytime)
+                        text.append(rou.cold)
+                        index += 1
+            if index == 0: rain_daytime = rou.day
+
+            for hour in range(21,-1,-3):
+                desc = forecast[day][hour]['description']
+                if hour < 12: daytime = rou.morning
+                else : daytime = rou.day
+
+                if 'rain ' in desc and not desc in ['light rain','moderate rain']:
+                    if not rou.wet in text:
+                        #if not daytime == rain_daytime: text.append(daytime)
+                        text.append(rou.wet)
+                        index += 3
+
+            for hour in range(21,-1,-3):
+                desc = forecast[day][hour]['description']
+                if hour < 12: daytime = rou.morning
+                else : daytime = rou.day
+                if not rou.wet in text:
+                    if  desc in ['light rain','moderate rain']:
+                        if not rou.slight_wet in text:
+                            #if not daytime == rain_daytime: text.append(daytime)
+                            text.append(rou.slight_wet)
+                            index += 1
+            if index == 0:
+                text = ['Belle journée, sort le vélo.']
             lines.append(rou.forecast_item.format(rou.forecast_img[index],jour,'. '.join(text)))
+            day_index.append(index)
+
+    if sum(day_index) <3:
+        week_summary = "Bonne semaine pour le vélo"
+    elif sum(day_index) <10:
+        week_summary = "Semaine mitigée mais gardez la motivation"
+    else:
+        week_summary = "Pas une super semaine pour le vélo mais restze motivés"
+
+    header = [ rou.forecast_header.format(week_summary)]
 
     with open("../data/forecast.yml","w") as fid:
+        fid.writelines(header)
         fid.writelines(lines)
 
 if __name__ == "__main__":

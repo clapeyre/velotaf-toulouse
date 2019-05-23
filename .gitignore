@@ -1,1 +1,3 @@
 public
+*.pyc
+update_weather_conditions/__pycache__

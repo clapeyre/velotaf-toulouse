@@ -1,24 +1,25 @@
 enable : true
-heading : About
-headingSpan : Us
+heading : Les prochains
+headingSpan : jours
+resume : Semaine mitigée mais gardez la motivation
 forecastItem :
 
-  - icon : images/red_bike.png
-    title : Vendredy
-    content : Pluie prévue
+  - icon : images/orange_bike.png
+    title : Vendredi
+    content : Quelques gouttes de prévues.
 
-  - icon : images/green_bike.png
+  - icon : images/orange_bike.png
     title : Samedi
-    content : Belle journée, prend ton vélo
+    content : Quelques gouttes de prévues.
 
-  - icon : images/red_bike.png
+  - icon : images/orange_bike.png
     title : Dimanche
-    content : Pluie prévue
+    content : Quelques gouttes de prévues.
 
-  - icon : images/red_bike.png
+  - icon : images/orange_bike.png
     title : Lundi
-    content : Pluie prévue
+    content : Quelques gouttes de prévues.
 
-  - icon : images/red_bike.png
+  - icon : images/orange_bike.png
     title : Mardi
-    content : Pluie prévue
+    content : Matinée . fraiche, couvrez vous.. Quelques gouttes de prévues.

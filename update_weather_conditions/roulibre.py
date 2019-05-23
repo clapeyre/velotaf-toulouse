@@ -36,8 +36,15 @@ visibility = dict([(n,'Nulle') for n in range(0,1000)] +
                   [(n,'Bonne') for n in range(5000,10001)])
 
 jour = {'Monday':'Lundi','Tuesday':'Mardi','Wednesday':'Mercredi','Thursday':'Jeudi',
-        'Friday':'Vendredy','Saturday':'Samedi','Sunday':'Dimanche'}
+        'Friday':'Vendredi','Saturday':'Samedi','Sunday':'Dimanche'}
 
+morning        = 'Matinée '
+day            = 'Journée '
+cold           = 'fraiche, couvrez vous.'
+slight_wet     = 'Quelques gouttes de prévues.'
+wet            = 'Pluie préuve ... sortez le ciret.'
+sunny          = 'ensoleillée'
+hot            = 'chaude'
 
 today_header ="""enable : true
 heading : Aujourd’
@@ -54,8 +61,9 @@ today_item = """
 """
 
 forecast_header = """enable : true
-heading : About
-headingSpan : Us
+heading : Les prochains
+headingSpan : jours
+resume : {0}
 forecastItem :
 """
 

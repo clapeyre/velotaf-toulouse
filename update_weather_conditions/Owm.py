@@ -1,6 +1,6 @@
 import requests
 import json
-from datetime import datetime
+from datetime import datetime,timedelta
 
 class Owm(object):
     """
@@ -69,18 +69,22 @@ class Owm(object):
         #rep = self.api_fake_forecast(url.format(city_id,self.api_key))
         forecast = {}
         for element in rep['list']:
-            day = datetime.fromtimestamp(element['dt']).strftime('%A')
-            forecast[day] = self.parse_response(element)
+            time = datetime.fromtimestamp(element['dt'])+timedelta(hours=+1)
+            day  = time.strftime('%A')
+            hour = time.hour
+            if day not in forecast.keys():
+                forecast[day] = {}
+            forecast[day][hour] = self.parse_response(element)
 
         return forecast
 
 
 if __name__ == "__main__":
     owm = Owm()
-    weather = owm.get_weather('Toulouse')
+    #weather = owm.get_weather('Toulouse')
 
-    for key in weather:
-        print(key,weather[key])
+    #for key in weather:
+    #    print(key,weather[key])
 
     forecast = owm.get_forecast('Toulouse')
-    print(forecast)
+    print(forecast['Friday'])
