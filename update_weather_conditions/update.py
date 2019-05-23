@@ -6,8 +6,8 @@ def update_today(weather):
     logo = rou.weather_img[weather['description']]
     lines = [rou.today_header.format(logo)]
 
-    # Add temperature item : 5°  -> progress bar = 0%
-    #                        40° -> progress bar = 100%
+    # Add temperature item : 5   -> progress bar = 0%
+    #                        40  -> progress bar = 100%
     progress_bar = max(0,min(((weather['temp_min']+weather['temp_max']/2)-5)/35,1),0)*100
     lines.append(rou.today_item.format("Temperatures",
                                        "mini {0}, maxi= {1}°C".format(weather['temp_min'],weather['temp_max']),

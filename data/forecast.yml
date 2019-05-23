@@ -9,7 +9,7 @@ forecastItem :
 
   - icon : images/green_bike.png
     title : Samedi
-    content : 
+    content : Belle journée, prend ton vélo
 
   - icon : images/red_bike.png
     title : Dimanche
