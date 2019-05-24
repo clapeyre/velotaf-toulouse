@@ -1,3 +1,5 @@
 public
 *.pyc
 update_weather_conditions/__pycache__
+data/forecast.yml
+data/today.yml

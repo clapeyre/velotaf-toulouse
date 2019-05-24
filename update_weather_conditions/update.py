@@ -47,7 +47,9 @@ def update_forecast(forecast):
         index = 0
         if not day == today:
             jour = rou.jour[day]
-            for hour in range(21,-1,-3):
+            hours = [hour for hour in forecast[day]]
+            hours.sort(reverse=True)
+            for hour in hours:
                 if hour < 12: rain_daytime = rou.morning
                 else : rain_daytime = rou.day
                 if forecast[day][hour]['temp'] < 10 :
@@ -57,7 +59,7 @@ def update_forecast(forecast):
                         index += 1
             if index == 0: rain_daytime = rou.day
 
-            for hour in range(21,-1,-3):
+            for hour in hours:
                 desc = forecast[day][hour]['description']
                 if hour < 12: daytime = rou.morning
                 else : daytime = rou.day
@@ -68,7 +70,7 @@ def update_forecast(forecast):
                         text.append(rou.wet)
                         index += 3
 
-            for hour in range(21,-1,-3):
+            for hour in hours:
                 desc = forecast[day][hour]['description']
                 if hour < 12: daytime = rou.morning
                 else : daytime = rou.day
