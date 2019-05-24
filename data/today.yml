@@ -1,26 +1,26 @@
 enable : true
 heading : Aujourd’
 headingSpan : hui
-title : Bonne journée pour sortir le vélo
-content : Temps clair, températures douces, pas de pluie
+title : Pluie légère, temperatures douces
+content :  
 image : images/weather/Rainy.png
 weatherItem : 
   - itemNumber : Temperatures
-    itemName : mini 14, maxi= 14°C
-    itemPercent : 45.714285714285715%
+    itemName : mini 11, maxi= 18°C
+    itemPercent : 42.857142857142854%
 
   - itemNumber : Pluie légère
     itemName :  
     itemPercent : 20%
 
   - itemNumber : Vent
-    itemName : Ouest
-    itemPercent : 10.25%
+    itemName : Nord-Ouest
+    itemPercent : 14.250000000000002%
 
   - itemNumber : Humiditée
     itemName :  
-    itemPercent : 93%
+    itemPercent : 88%
 
   - itemNumber : Visibilitée
     itemName :  
-    itemPercent : 8000%
+    itemPercent : 10000%

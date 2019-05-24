@@ -3,8 +3,7 @@ import roulibre as rou
 
 def update_today(weather):
     """ Update today page with weather conditions """
-    logo = rou.weather_img[weather['description']]
-    lines = [rou.today_header.format(logo)]
+    lines = []
 
     # Add temperature item : 5   -> progress bar = 0%
     #                        40  -> progress bar = 100%
@@ -32,7 +31,15 @@ def update_today(weather):
     progress_bar = weather['visibility']/100
     lines.append(rou.today_item.format("Visibilitée"," ",weather['visibility']))
 
+    # add header
+    logo     = rou.weather_img[weather['description']]
+    title    = '{0}, {1}'.format(rou.global_description[weather['description']],
+                                 rou.temp_description[weather['temp']])
+    subtitle = ' '
+    head_lines = [rou.today_header.format(title,subtitle,logo)]
+
     with open("../data/today.yml","w") as fid:
+        fid.writelines(head_lines)
         fid.writelines(lines)
 
 def update_forecast(forecast):

@@ -1,6 +1,9 @@
-roulibre = {}
-roulibre['clear sky']       = 'Temps clair'
-roulibre['overcast clouds'] = 'Nombreux nuages'
+global_description = { 'clear sky'              : 'Temps clair',
+                       'overcast clouds'        : 'Nombreux nuages',
+                       'light rain'             : 'Pluie légère',
+                       'moderate rain'          : 'Pluie modérée',
+                       'heavy intensity rain'   : 'Pluie forte',
+                       'very heavy rain'        : 'Pluie très forte'}
 
 weather_img = {}
 weather_img['clear sky']            = 'images/weather/Sunny.png'
@@ -19,6 +22,12 @@ rain_description = {'no rain'                : 'Pas de pluie',
                     'moderate rain'          : 'Pluie modérée',
                     'heavy intensity rain'   : 'Pluie forte',
                     'very heavy rain'        : 'Pluie très forte'}
+
+temp_description = dict([(n,'temperatures froides')  for n in range(-10,5)] +
+                        [(n,'temperatures fraiches') for n in range(5,15)] +
+                        [(n,'temperatures douces')   for n in range(15,25)] +
+                        [(n,'temperatures chaudes')   for n in range(25,50)])
+
 rain_progress_bar = {'no rain':0,'light rain': 20,'moderate rain': 50,'heavy intensity rain':90,'very heavy rain':100}
 
 wind_dir = dict([(n,'Nord')       for n in range(0,23)] +
@@ -49,9 +58,9 @@ hot            = 'chaude'
 today_header ="""enable : true
 heading : Aujourd’
 headingSpan : hui
-title : Bonne journée pour sortir le vélo
-content : Temps clair, températures douces, pas de pluie
-image : {0}
+title : {0}
+content : {1}
+image : {2}
 weatherItem : """
 
 today_item = """
