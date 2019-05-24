@@ -57,7 +57,7 @@ class Owm(object):
         city_id = self.get_city_id(city)
         url = self.server.format('weather',city_id)
         rep = self.api_call(url.format(city_id,self.api_key))
-        rep = self.api_fake_weather(url.format(city_id,self.api_key))
+        #rep = self.api_fake_weather(url.format(city_id,self.api_key))
         dic = self.parse_response(rep)
         return dic
 
