@@ -1,4 +1,5 @@
 public
+.vscode
 *.pyc
 update_weather_conditions/__pycache__
 data/forecast.yml
