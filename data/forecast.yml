@@ -5,21 +5,21 @@ resume : Semaine mitigée mais gardez la motivation
 forecastItem :
 
   - icon : images/orange_bike.png
-    title : Samedi
-    content : Quelques gouttes de prévues.
-
-  - icon : images/orange_bike.png
-    title : Dimanche
-    content : Quelques gouttes de prévues.
-
-  - icon : images/orange_bike.png
     title : Lundi
     content : Quelques gouttes de prévues.
 
   - icon : images/orange_bike.png
     title : Mardi
-    content : Quelques gouttes de prévues.
+    content : Matinée . fraiche, couvrez vous.. Quelques gouttes de prévues.
 
   - icon : images/orange_bike.png
     title : Mercredi
     content : Matinée . fraiche, couvrez vous.. Quelques gouttes de prévues.
+
+  - icon : images/orange_bike.png
+    title : Jeudi
+    content : Matinée . fraiche, couvrez vous.. Quelques gouttes de prévues.
+
+  - icon : images/green_bike.png
+    title : Vendredi
+    content : Belle journée, sort le vélo.

@@ -45,52 +45,52 @@ def update_today(weather):
 def update_forecast(forecast):
     """ Update forecast page with weather forecast, A REVOIR !!  """
     import time
-    today = time.strftime('%A')
+    day = time.strftime('%A')
     day_index = []
     lines = []
-
-    for day in forecast:
+    for day_idx in range(len(forecast)):
+        day = rou.next_day[day]
         text = []
         index = 0
-        if not day == today:
-            jour = rou.jour[day]
-            hours = [hour for hour in forecast[day]]
-            hours.sort(reverse=True)
-            for hour in hours:
-                if hour < 12: rain_daytime = rou.morning
-                else : rain_daytime = rou.day
-                if forecast[day][hour]['temp'] < 10 :
-                    if not rou.cold in text:
-                        text.append(rain_daytime)
-                        text.append(rou.cold)
-                        index += 1
-            if index == 0: rain_daytime = rou.day
 
-            for hour in hours:
-                desc = forecast[day][hour]['description']
-                if hour < 12: daytime = rou.morning
-                else : daytime = rou.day
+        jour = rou.jour[day]
+        hours = [hour for hour in forecast[day]]
+        hours.sort(reverse=True)
+        for hour in hours:
+            if hour < 12: rain_daytime = rou.morning
+            else : rain_daytime = rou.day
+            if forecast[day][hour]['temp'] < 10 :
+                if not rou.cold in text:
+                    text.append(rain_daytime)
+                    text.append(rou.cold)
+                    index += 1
+        if index == 0: rain_daytime = rou.day
 
-                if 'rain ' in desc and not desc in ['light rain','moderate rain']:
-                    if not rou.wet in text:
-                        #if not daytime == rain_daytime: text.append(daytime)
-                        text.append(rou.wet)
-                        index += 3
+        for hour in hours:
+            desc = forecast[day][hour]['description']
+            if hour < 12: daytime = rou.morning
+            else : daytime = rou.day
 
-            for hour in hours:
-                desc = forecast[day][hour]['description']
-                if hour < 12: daytime = rou.morning
-                else : daytime = rou.day
+            if 'rain ' in desc and not desc in ['light rain','moderate rain']:
                 if not rou.wet in text:
-                    if  desc in ['light rain','moderate rain']:
-                        if not rou.slight_wet in text:
-                            #if not daytime == rain_daytime: text.append(daytime)
-                            text.append(rou.slight_wet)
-                            index += 1
-            if index == 0:
-                text = ['Belle journée, sort le vélo.']
-            lines.append(rou.forecast_item.format(rou.forecast_img[index],jour,'. '.join(text)))
-            day_index.append(index)
+                    #if not daytime == rain_daytime: text.append(daytime)
+                    text.append(rou.wet)
+                    index += 3
+
+        for hour in hours:
+            desc = forecast[day][hour]['description']
+            if hour < 12: daytime = rou.morning
+            else : daytime = rou.day
+            if not rou.wet in text:
+                if  desc in ['light rain','moderate rain']:
+                    if not rou.slight_wet in text:
+                        #if not daytime == rain_daytime: text.append(daytime)
+                        text.append(rou.slight_wet)
+                        index += 1
+        if index == 0:
+            text = ['Belle journée, sort le vélo.']
+        lines.append(rou.forecast_item.format(rou.forecast_img[index],jour,'. '.join(text)))
+        day_index.append(index)
 
     if sum(day_index) <3:
         week_summary = "Bonne semaine pour le vélo"

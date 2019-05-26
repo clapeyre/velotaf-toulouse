@@ -1,4 +1,6 @@
 global_description = { 'clear sky'              : 'Temps clair',
+                       'scattered clouds'       : 'Nuages épars',
+                       'broken clouds'          : 'Quelques nuages',
                        'overcast clouds'        : 'Nombreux nuages',
                        'light rain'             : 'Pluie légère',
                        'moderate rain'          : 'Pluie modérée',
@@ -7,6 +9,8 @@ global_description = { 'clear sky'              : 'Temps clair',
 
 weather_img = {}
 weather_img['clear sky']            = 'images/weather/Sunny.png'
+weather_img['broken clouds']        = 'images/weather/Overcast.png'
+weather_img['scattered clouds']     = 'images/weather/Overcast.png'
 weather_img['overcast clouds']      = 'images/weather/Overcast.png'
 weather_img['light rain']           = 'images/weather/Rainy.png'
 weather_img['moderate rain']        = 'images/weather/Rainy.png'
@@ -46,6 +50,9 @@ visibility = dict([(n,'Nulle') for n in range(0,1000)] +
 
 jour = {'Monday':'Lundi','Tuesday':'Mardi','Wednesday':'Mercredi','Thursday':'Jeudi',
         'Friday':'Vendredi','Saturday':'Samedi','Sunday':'Dimanche'}
+
+next_day = {'Monday':'Tuesday','Tuesday':'Wednesday','Wednesday':'Thursday','Thursday':'Friday',
+            'Friday':'Saturday','Saturday':'Sunday','Sunday':'Monday'}
 
 morning        = 'Matinée '
 day            = 'Journée '

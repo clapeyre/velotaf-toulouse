@@ -1,25 +1,25 @@
 enable : true
 heading : Aujourd’
 headingSpan : hui
-title : Pluie légère, temperatures douces
+title : Nuages épars, temperatures douces
 content :  
-image : images/weather/Rainy.png
+image : images/weather/Overcast.png
 weatherItem : 
   - itemNumber : Temperatures
-    itemName : mini 11, maxi= 18°C
-    itemPercent : 42.857142857142854%
+    itemName : mini 15, maxi= 20°C
+    itemPercent : 57.14285714285714%
 
-  - itemNumber : Pluie légère
+  - itemNumber : Pas de pluie
     itemName :  
-    itemPercent : 20%
+    itemPercent : 0%
 
   - itemNumber : Vent
-    itemName : Nord-Ouest
-    itemPercent : 14.250000000000002%
+    itemName : Ouest
+    itemPercent : 16.75%
 
   - itemNumber : Humiditée
     itemName :  
-    itemPercent : 88%
+    itemPercent : 60%
 
   - itemNumber : Visibilitée
     itemName :  

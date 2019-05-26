@@ -1,7 +1,7 @@
-#baseURL = "file:///Users/misdariis/Documents/Perso/Projects/rouelibre/velotaf-toulouse/public/"
-baseURL = "" #www.exemple.org"
+#baseURL = "www.roule.net"
+baseURL = "" # www.roule.net"
 languageCode = "en-us"
-title = "Roulibre"
+title = "Roule"
 theme = "meghna-hugo"
 summaryLength = 4
 
@@ -47,8 +47,8 @@ custom_css = ["css/custom.css"]
     enable = true
     bgImage = "images/slider/hero-area.jpg"
     icon = "tf-ion-play"
-    heading = "Bienvenue sur rouelibre Toulouse"
-    #content= "Aïe, pas une très bonne journée pour le vélo! Températures douces mais beaucoup de pluie prévue." 
+    heading = "Bienvenuie sur roule.net"
+    content= "Services pour le velotaf"
     #btn = Flase
     #btnText="Explore Us"
     #btnURL="#services"
